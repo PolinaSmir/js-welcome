@@ -1,4 +1,8 @@
-const length = 15;
-const height = 5;
-let area = length * height;
-console.log(area);
+let a = 3;
+let b = 6;
+let n = 8;
+if (b % 2 === 0) {
+  console.log((n += 5));
+} else {
+  console.log((a = 15));
+}
