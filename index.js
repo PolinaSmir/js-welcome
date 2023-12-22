@@ -1,6 +1,17 @@
-let rest = 15 % 6;
-console.log(rest);
-let pair = 6 % 2;
-console.log(pair);
-const x3 = 2 ** 9;
-console.log(x3);
+// Increment, decrement
+
+let superNumber = 1;
+
+//Task: Increase superNumber by 1
+
+superNumber++;
+//console.log(superNumber); //2
+//console.log(superNumber++); //2 same thing faster
+superNumber--;
+// Prefix
+//++superNumber; --> first Increment then everything(all other operations) else
+//--superNumber; --> first decrement then everything else
+//Postfix
+//superNumber++; --> first variable, after operation and then increment
+//superNumber--; --> first variable, after operation and then decrement
+console.log(--superNumber);
