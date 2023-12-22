@@ -1,12 +1,6 @@
-const box = null;
-console.log(box);
-let box1 = 5;
-console.log(box1);
-let box2 = "2";
-console.log(box2);
-let result = box1 + box2;
-console.log(result);
-result = box2 - box1;
-console.log(result);
-result = box + box1;
-console.log(result);
+let rest = 15 % 6;
+console.log(rest);
+let pair = 6 % 2;
+console.log(pair);
+const x3 = 2 ** 9;
+console.log(x3);
