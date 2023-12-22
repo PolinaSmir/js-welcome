@@ -1,13 +1,10 @@
 // () call function
 console.log(100);
 
-alert("Hello World!");
+// alert("Hello World!");
 
 console.log("test");
 
 console.log(true);
-/*
-1
-2
-.....
-*/
+console.log(null);
+console.log(5n);
