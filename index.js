@@ -1,8 +1,8 @@
-let a = 3;
-let b = 6;
-let n = 8;
-if (b % 2 === 0) {
-  console.log((n += 5));
+let r = 10;
+if (r > 12) {
+  console.log("Bolshe 12");
+} else if (r < 5) {
+  console.log("Menshe 5");
 } else {
-  console.log((a = 15));
+  console.log("V diapazone miz 5 i 12");
 }
