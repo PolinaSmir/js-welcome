@@ -47,3 +47,16 @@ if (ruchka >= lidi && blocknot >= lidi) {
 } else {
   console.log("Ne mozet");
 }
+
+// Task 5
+let age = 18;
+let dok_pilgy = false;
+if (age < 6 && (dok_pilgy === true || dok_pilgy !== true)) {
+  console.log("Вход бесплатный");
+} else if (age > 12 && dok_pilgy !== true) {
+  console.log("Вход стоит 20$");
+} else if (age > 12) {
+  console.log("Вход стоит 10$ (скидка 50%)");
+} else {
+  console.log("Вход стоит 10$");
+}
