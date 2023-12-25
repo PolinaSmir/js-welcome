@@ -1,20 +1,8 @@
-function addFive(number) {
-  console.log(Number(number) + 5);
+greetingUser("James");
+
+function greetingUser(userName) {
+  console.log("Hi, " + userName);
 }
 
-// addFive(prompt());
-
-function addFiveToNumber(number) {
-  let result = number + 5;
-  console.log(result);
-}
-
-// addFiveToNumber(5);
-
-function addTwoNumbers(num1, num2) {
-  const result = num1 + num2;
-  return result;
-}
-
-const functionResult = addTwoNumbers(2, 5);
-console.log(functionResult);
+greetingUser("Alex");
+// other types of functions on the other git
