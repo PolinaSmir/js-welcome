@@ -19,7 +19,7 @@ if (h >= 0 && h <= 15) {
 
 /*
 rik
-kratn 4 i ne kratn 100 ale kratn 400
+kratn 4 i ne kratn 100 ili kratn 400
  */
 let r = 2012;
 if ((r % 4 === 0 && r % 100 !== 0) || r % 400 === 0) {
@@ -49,14 +49,41 @@ if (ruchka >= lidi && blocknot >= lidi) {
 }
 
 // Task 5
-let age = 18;
-let dok_pilgy = false;
-if (age < 6 && (dok_pilgy === true || dok_pilgy !== true)) {
-  console.log("Вход бесплатный");
-} else if (age > 12 && dok_pilgy !== true) {
-  console.log("Вход стоит 20$");
-} else if (age > 12) {
-  console.log("Вход стоит 10$ (скидка 50%)");
+// let age = 10;
+// let dokPilgy = false;
+// if (age <= 6 && age > 0 && (dokPilgy === true || dokPilgy !== true)) {
+//   console.log("Вход бесплатный");
+// } else if (age > 12 && dokPilgy !== true) {
+//   console.log("Вход стоит 20$");
+// } else if (age > 12) {
+//   console.log("Вход стоит 10$ (скидка 50%)");
+// } else if (age < 0 || typeof age !== "number") {
+//   console.log(
+//     "Ошибка! Вы ввели некоректный возраст пользователя. Попробуйте ещё раз."
+//   );
+// } else {
+//   console.log("Вход стоит 10$");
+// }
+
+// Drugoy sposob
+const age = 20;
+const hasDiscount = false;
+let ticketPrice;
+
+if (age < 0 || typeof age !== "number") {
+  console.log(
+    "Ошибка! Вы ввели некоректный возраст пользователя. Попробуйте ещё раз."
+  );
+} else if (age <= 6) {
+  ticketPrice = 0;
+} else if (age <= 12) {
+  ticketPrice = 10;
+} else if (hasDiscount) {
+  ticketPrice = 10;
 } else {
-  console.log("Вход стоит 10$");
+  ticketPrice = 20;
+}
+
+if (ticketPrice !== undefined) {
+  console.log("Билет стоит " + ticketPrice);
 }
