@@ -28,3 +28,17 @@ const valueFromUser = 19;
 
 console.log(greets[valueFromUser]); // Hello
 // greets[19]
+
+const obj = {
+  Mon: "drive lesson",
+  Tue: "dentist visit",
+  Wed: "go to party",
+  Thu: "hard work",
+  Fri: "chill",
+  Sat: "go to park",
+};
+
+const nameOfDay = prompt(
+  "Type your week day to check your plan: \n Monday = Mon, \n Tuesday = Tue, \n ..."
+);
+alert(obj[nameOfDay] ? obj[nameOfDay] : "Error");
