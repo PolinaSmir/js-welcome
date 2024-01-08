@@ -1,11 +1,8 @@
-const obj = {
-  Mon: "drive lesson",
-  Tue: "dentist visit",
-  Wed: "go to party",
-  Thu: "hard work",
-  Fri: "chill",
-  Sat: "go to park",
-  0: "a",
-};
+function greeting(user) {
+  return `Hello ${"name" in user ? user.name : "Anonym"}`;
+}
 
-console.log("name" in obj);
+const user = {
+  name: "Peter",
+  email: "john@email.com",
+};
