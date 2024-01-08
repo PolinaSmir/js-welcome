@@ -1,14 +1,30 @@
-function greetingUser(user) {
-  return `Hey ${user.name} ${user.surname}. You will turn ${
-    user.age + 1
-  } next year`;
-}
+// const user = {
+//   name: "John",
+//   "favourite color": "red",
+//   0: "value",
+// };
 
-// та у нас є об'єкт
-const user = {
-  name: "John",
-  surname: "Doe",
-  age: 19,
+// console.log(user.name);
+// // user.'favourite color'; syntax error
+// // user.0; also syntax error
+// console.log(user["favourite color"]);
+// console.log(user[0]);
+
+// const someObj = {
+//   2: 10,
+// };
+
+// console.log(someObj[2]);
+// console.log(someObj["2"]);
+
+const greets = {
+  15: "Hi",
+  17: "Yo, whats up",
+  19: "Hello",
+  30: "Good morning",
 };
 
-greetingUser(user);
+const valueFromUser = 19;
+
+console.log(greets[valueFromUser]); // Hello
+// greets[19]
