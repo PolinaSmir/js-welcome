@@ -10,7 +10,7 @@ function sumOfElements(arr) {
 }
 
 console.log(sumOfElements(arrOfNum));
-*/
+
 
 const arrOfNum = [3, 6, 8, 2, 3, 5, 1];
 
@@ -25,3 +25,4 @@ function maxNumberOfArray(arr) {
 }
 
 console.log(maxNumberOfArray(arrOfNum));
+*/
