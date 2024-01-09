@@ -1,26 +1,11 @@
-const departmentSalary = {
-  HR: 120000,
-  development: 550000,
-  PR: 50000,
-  marketing: 120000,
-  assistant: undefined,
-  ab: "gsf",
-};
+const arrOfNum = [3, 6, 8, 2, 3, 5, 1];
 
-function sumOfWasteSalary(departmentSalary) {
+function sumOfElements(arr) {
   let sum = 0;
-  let nameOfUndefined;
-  for (let key in departmentSalary) {
-    if (typeof departmentSalary[key] === "number") {
-      sum += departmentSalary[key];
-    } else {
-      nameOfUndefined = key;
-      console.log(
-        `You have undefined salary for department: ${nameOfUndefined}`
-      );
-    }
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
   }
   return sum;
 }
 
-console.log(sumOfWasteSalary(departmentSalary));
+console.log(sumOfElements(arrOfNum));
