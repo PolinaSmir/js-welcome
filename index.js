@@ -26,3 +26,15 @@ function maxNumberOfArray(arr) {
 
 console.log(maxNumberOfArray(arrOfNum));
 */
+
+const arrOfNum = [3, 6, 8, 2, 3, 5, 1];
+
+function sredArifm(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  let sredArifm = sum / arr.length;
+  return sredArifm;
+}
+console.log(sredArifm(arrOfNum));
