@@ -1,40 +1,11 @@
-/*
-const arrOfNum = [3, 6, 8, 2, 3, 5, 1];
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.splice(1, 2));
 
-function sumOfElements(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-  return sum;
-}
+const arr2 = [1, 2, 3, 4];
+console.log(arr2.slice(1));
 
-console.log(sumOfElements(arrOfNum));
-
-
-const arrOfNum = [3, 6, 8, 2, 3, 5, 1];
-
-function maxNumberOfArray(arr) {
-  let max = arr[0];
-  for (let i = 0; i < arr.length; i++) {
-    if (max < arr[i]) {
-      max = arr[i];
-    }
-  }
-  return max;
-}
-
-console.log(maxNumberOfArray(arrOfNum));
-*/
-
-const arrOfNum = [3, 6, 8, 2, 3, 5, 1];
-
-function sredArifm(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-  let sredArifm = sum / arr.length;
-  return sredArifm;
-}
-console.log(sredArifm(arrOfNum));
+const arr3 = [1, 2, 3, 4, 5];
+arr3.splice(1, 0, "w", "tr-td");
+arr3.splice(6, 0, "vv");
+arr3.splice(8, 0, "aa");
+console.log(arr3);
