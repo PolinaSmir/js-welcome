@@ -1,4 +1,4 @@
-const array = [1, 2, 3, 4, 5];
+// const array = [1, 2, 3, 4, 5];
 
 // array.forEach((a) => {
 //   console.log(a * a);
@@ -34,5 +34,10 @@ const users = [
   },
 ];
 
-users.forEach((item) => (item.age += 1)); // vot tak mozno izmenit
-console.log(users);
+function newUserObject(user) {
+  return {
+    fullname: `${user.name} ${user.lastName}`,
+    email: user.email,
+  };
+}
+const new_users = users.map(newUserObject);
