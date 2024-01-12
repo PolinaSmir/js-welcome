@@ -1,11 +1,38 @@
-const arr = [1, 2, 3, 4, 5];
-console.log(arr.splice(1, 2));
+const array = [1, 2, 3, 4, 5];
 
-const arr2 = [1, 2, 3, 4];
-console.log(arr2.slice(1));
+// array.forEach((a) => {
+//   console.log(a * a);
+// });
 
-const arr3 = [1, 2, 3, 4, 5];
-arr3.splice(1, 0, "w", "tr-td");
-arr3.splice(6, 0, "vv");
-arr3.splice(8, 0, "aa");
-console.log(arr3);
+// // const square = (a) => a * a; -- strelocnaja funkce
+
+// const new_arr = array.map((item) => {
+//   return item - 1;
+// });
+// function minusOne(a) {
+//   return a - 1;
+// }
+
+const users = [
+  {
+    name: "John",
+    lastName: "Doe",
+    age: 19,
+    email: "ligma@mail.com",
+  },
+  {
+    name: "Jane",
+    lastName: "Doe",
+    age: 22,
+    email: "ligmajane@mail.com",
+  },
+  {
+    name: "Jackson",
+    lastName: "Michael",
+    age: 55,
+    email: "jackson@mail.com",
+  },
+];
+
+users.forEach((item) => (item.age += 1)); // vot tak mozno izmenit
+console.log(users);
