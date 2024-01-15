@@ -28,9 +28,17 @@ function MyArray() {
       return undefined;
     }
   };
+  this.forEach = function (callback) {
+    for (let i = 0; i < this.length; i++) {
+      callback(this[i], i, this);
+    }
+  };
 }
 const array = new MyArray();
 array.push(1);
 array.push(2);
 array.push(3, 1, 3, 411, 43, 11);
 array.pop();
+array.forEach((a) => {
+  console.log(a);
+});
