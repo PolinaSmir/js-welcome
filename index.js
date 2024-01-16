@@ -1,71 +1,47 @@
-// function MyArray() {
-//   this.length = 0;
+"use strict";
 
-//   this.push = function (value) {
-//     this[this.length] = value;
-//     this.length++;
-//     return this.length;
-//   };
-// }
+console.log(this);
 
-function MyArray() {
-  this.length = 0;
+function test() {
+  console.log(this);
 }
-function MyArrayPrototype() {
-  this.push = function (value) {
-    for (let i = 0; i < arguments.length; i++) {
-      this[this.length] = arguments[i];
-      this.length++;
-    }
-    return this.length;
-  };
-  this.pop = function () {
-    if (this.length > 0) {
-      const lastItem = this[this.length - 1];
-      delete this[this.length - 1];
-      this.length--;
-      return lastItem;
-    } else {
-      return undefined;
-    }
-  };
-  this.forEach = function (callback) {
-    for (let i = 0; i < this.length; i++) {
-      callback(this[i], i, this);
-    }
-  };
-}
+test();
 
-MyArray.prototype = new MyArrayPrototype();
-/*
-const array = new MyArray();
-array.push(1);
-array.push(2);
-array.push(3, 1, 3, 411, 43, 11);
-array.pop();
-array.forEach((item) => {
-  console.log(item ** 2);
-});
-*/
-function Ladder() {
-  this.currentStair = 0;
-}
+const test2 = function () {
+  console.log(this);
+};
 
-function LadderPrototype() {
-  this.up = function () {
-    this.currentStair++;
-    return this;
-  };
-  this.down = function () {
-    this.currentStair--;
-    return this;
-  };
-  this.showStair = function () {
-    return this.currentStair;
-  };
-}
-Ladder.prototype = new LadderPrototype();
+test2();
 
-const ladder = new Ladder();
-//1   //2   //3    //2     //clg 2
-console.log(ladder.up().up().up().down().showStair());
+const test3 = () => {
+  console.log(this);
+};
+
+test3();
+
+const newspaper = {
+  title: "News",
+  articles: [
+    {
+      author: "John Doe",
+      date: "23-08-2023",
+      text: "lorem",
+    },
+    {
+      author: "Richard Doe",
+      date: "23-08-2023",
+      text: "lorem",
+    },
+    {
+      author: "Sam Doe",
+      date: "23-08-2023",
+      text: "lorem",
+    },
+  ],
+  showArticles: function () {
+    this.articles.forEach((item, index) => {
+      console.log(`${this.title} ${index} - ${item.author}`);
+    });
+  },
+};
+newspaper.showArticles();
