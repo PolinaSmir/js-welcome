@@ -1,23 +1,12 @@
-class User {
-  constructor(name, lastName, age) {
-    this.name = name;
-    this.lastName = lastName;
-    this.age = age;
-  }
-
-  getFullName() {
-    return `${this.name} ${this.lastName}`;
-  }
-}
-
-const user1 = new User("Alex", "Dane", 23);
-const user2 = new User("Dari", "Dane", 23);
+const MIN_ZP = 7100;
+const MIN_DAYS = 21;
+const MIN_RATE = MIN_ZP / MIN_DAYS;
 
 class Worker {
-  constructor(name, lastName, payment, daysInThisMonth) {
+  constructor(name, lastName, payment = MIN_RATE, daysInThisMonth = MIN_DAYS) {
     this.name = name;
     this.lastName = lastName;
-    this.payment = payment;
+    this.payment = Number(payment.toFixed(2)); // округление + откидывание нуля в конце при помощи Number
     this.daysInThisMonth = daysInThisMonth;
   }
 
@@ -27,4 +16,4 @@ class Worker {
 }
 
 const worker1 = new Worker("Alex", "Dane", 23, 5);
-const worker2 = new Worker("Dari", "Dane", 23, 10);
+const worker2 = new Worker("Dari", "Dane");
