@@ -1,91 +1,42 @@
-function capitaliseWords(str) {
-  let words = str.split(" ");
-  for (let i = 0; i < words.length; i++) {
-    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
-  }
-  return words.join(" ");
+const date = new Date();
+const date1 = new Date("12-31-2023");
+
+console.log(date1.getDate());
+console.log(date1.getDay());
+console.log(date1.getFullYear());
+console.log(date.getHours());
+console.log(date1.getTime());
+
+let sum = 0;
+const time1 = new Date();
+for (let i = 0; i <= 1000000; i++) {
+  sum += i;
 }
-console.log(capitaliseWords("word flower third"));
 
-// function checkSpam(str) {
-//   const words = str.toLowerCase();
-//   for (let i = 0; i < words.length; i++) {
-//     if (words.includes("viagra")) {
-//       return true;
-//     } else if (words.includes("xxx")) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }
-// }
+const time2 = new Date();
 
-function isPalindrom(str) {
-  if (str.toLowerCase() === Array.from(str.toLowerCase()).reverse().join("")) {
-    return `${str} - палiндром`;
+console.log(sum);
+
+console.log(time2.getTime() - time1.getTime());
+
+function factorial(x) {
+  if (x === 1) {
+    return x;
   } else {
-    return `${str} - не палiндром`;
+    return x * factorial(x - 1);
   }
 }
 
-console.log(isPalindrom("Anna"));
-console.log(isPalindrom("Mama"));
-console.log(isPalindrom("Namman"));
+console.log(factorial(5));
 
-// function MyArray() {
-//   this.length = 0;
-
-//   this.push = function (value) {
-//     for (let i = 0; i < arguments.length; i++) {
-//       this[this.length] = arguments[i];
-//       this.length++;
-//     }
-//     return this.length;
-//   };
-
-//   this.forEach = function (callback) {
-//     for (let i = 0; i < this.length; i++) {
-//       callback(this[i], i, this);
-//     }
-//   };
-// }
-
-// const arr = new MyArray();
-// arr.push(1);
-// arr.push(2);
-// arr.push(3, 2, 5, 10, 12, 33);
-// const a = [1, 2, 3];
-// arr.forEach((item) => {
-//   console.log(item);
-// });
-
-// function checkSpamDva(str) { // variant 1
-//   const lowStr = str.toLowerCase();
-//   const result = lowStr.includes("viagra") || lowStr.includes("xxx");
-//   return result;
-// }
-
-/*
-function checkSpam(str) {   // variant 2
-  const spamArray = ["viagra", "xxx", "drugs"];
-  for (let i = 0; i < spamArray.length; i++) {
-    if (str.toLowerCase().includes(spamArray[i])) {
-      return true;
-    }
+function findFibonacci(n) {
+  if (n === 0) {
+    return 0;
   }
-  return false;
-}
+  if (n === 1) {
+    return 1;
+  }
 
-console.log(checkSpam("buy ViAgrA now"));
-console.log(checkSpam("free xxxxxxxx ViAgrA"));
-console.log(checkSpam("innocent rabbit"));
-*/
-
-function checkPalindrom(str) {
-  const originalStr = str.toLowerCase();
-  const reversedStr = originalStr.split("").reverse().join("");
-  return originalStr === reversedStr;
+  return findFibonacci(n - 1) + findFibonacci(n - 2);
 }
-console.log(checkPalindrom("Anna"));
-console.log(checkPalindrom("Mama"));
-console.log(checkPalindrom("Namman"));
+console.log(findFibonacci(4)); // оно раскрывается до значения 1 и 0 и потом схлопывается в число по формуле(т.к. там много функций то там формулы)
