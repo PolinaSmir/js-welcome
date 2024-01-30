@@ -17,3 +17,30 @@ class Worker {
 
 const worker1 = new Worker("Alex", "Dane", 23, 5);
 const worker2 = new Worker("Dari", "Dane");
+
+class Fuel {
+  constructor(volume, density) {
+    this.volume = volume;
+    this.density = density;
+  }
+
+  getWeight() {
+    return this.volume * this.density;
+  }
+}
+
+const benzin = new Fuel(50, 0.9);
+
+class Auto {
+  constructor(name, ownWeight, fuel) {
+    this.name = name;
+    this.ownWeight = ownWeight;
+    this.fuel = fuel;
+  }
+
+  getFullWeight() {
+    return this.ownWeight + this.fuel.getWeight();
+  }
+}
+
+const bmw = new Auto("BMW", 4000, benzin);
