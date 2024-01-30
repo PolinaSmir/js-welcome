@@ -33,9 +33,14 @@ class RangeValidator {
   }
 
   getRange() {
-    let arr = [this._from];
-    for (let i = 0; i < this._to - this._from; i++) {
-      arr.push(arr[i] + 1);
+    // let arr = [this._from];
+    // for (let i = 0; i < this._to - this._from; i++) {
+    //   arr.push(arr[i] + 1);
+    // }
+    // return arr;
+    let arr = [];
+    for (let i = this._from; i <= this._to; i++) {
+      arr.push(i);
     }
     return arr;
   }
