@@ -98,3 +98,119 @@ function getFigureArea(figure) {
   }
   throw new TypeError("Parameter is not a figure");
 }
+
+class Human {
+  constructor(fullName, birthYear, gender) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+    this.gender = gender;
+  }
+
+  //Setters
+  set fullName(value) {
+    if (typeof value !== "string") {
+      throw new TypeError("Fullname must be a string");
+    }
+    this._fullName = value;
+  }
+  set birthYear(value) {
+    if (typeof value !== "number") {
+      throw new TypeError("BirthYear must be a number");
+    }
+    this._birthYear = value;
+  }
+  set gender(value) {
+    if (typeof value !== "string") {
+      throw new TypeError("Gender must be a string");
+    }
+    this._gender = value;
+  }
+
+  //Get
+  get fullName() {
+    return this._fullName;
+  }
+  get birthYear() {
+    return this._birthYear;
+  }
+  get gender() {
+    return this._gender;
+  }
+
+  // Method
+
+  greeting() {
+    let prefix;
+
+    if (this.gender === "male") {
+      prefix = "Mr";
+    } else if (this.gender === "female") {
+      prefix = "Ms";
+    } else {
+      prefix = prompt("How should we address you?");
+    }
+    return `Hello, ${prefix} ${this.fullName}`;
+  }
+}
+
+class Student extends Human {
+  constructor(
+    fullName,
+    birthYear,
+    gender,
+    admissionYear,
+    studentId,
+    averageGrade
+  ) {
+    super(fullName, birthYear, gender);
+    this.admissionYear = admissionYear;
+    this.studentId = studentId;
+    this.averageGrade = averageGrade;
+  }
+
+  // Set
+
+  set admissionYear(value) {
+    this._admissionYear = value;
+  }
+  set studentId(value) {
+    this._studentId = value;
+  }
+  set averageGrade(value) {
+    if (typeof value !== "number") {
+      throw new TypeError("Grade must be a number");
+    }
+    if (value > 100 || value < 0) {
+      throw new RangeError("Average grade must be [0 ; 100]");
+    }
+    this._averageGrade = value;
+  }
+
+  // Get
+
+  get admissionYear() {
+    return this._admissionYear;
+  }
+  get studentId() {
+    return this._studentId;
+  }
+  get averageGrade() {
+    return this._averageGrade;
+  }
+
+  // Method
+
+  isExcellentStudent() {
+    // if (this.averageGrade >= 90) {
+    //   return true;
+    // }
+    // return false;
+
+    // const result = this.averageGrade >= 90 ? true : false;
+    // return result;
+
+    return this.averageGrade >= 90;
+  }
+}
+
+const student = new Student("John Madden", 18, "male", 2023, "id234", 90);
