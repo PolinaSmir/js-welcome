@@ -1,100 +1,51 @@
-class Figure {
-  constructor(sideQuantity) {
-    this.sideQuantity = sideQuantity;
-  }
+const arr = [2, 4, 1, 3, 7, 3, 2, 1, 3, 5, 2, 8, 2, 4, 1];
 
-  get sideQuantity() {
-    return this._sideQuantity;
-  }
-
-  set sideQuantity(newValue) {
-    if (newValue < 0) {
-      throw new RangeError("Side quantity cannot be less than 0");
+function linearSearch(array, value) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === value) {
+      return i;
     }
-
-    this._sideQuantity = newValue;
   }
-
-  getArea() {}
+  return -1;
 }
 
-class Triangle extends Figure {
-  constructor(a, b, angle) {
-    super(3);
-    this.a = a;
-    this.b = b;
-    this.angle = angle;
-  }
+console.log(linearSearch(arr, 9));
 
-  get a() {
-    return this._a;
-  }
-
-  set a(newValue) {
-    if (newValue < 0) {
-      throw new RangeError("Side cannot be less than 0");
+function multyTable(limit) {
+  const table = [];
+  for (let i = 1; i <= limit; i++) {
+    for (let j = 1; j <= limit; j++) {
+      table.push(`${i} * ${j} = ${i * j}`);
     }
-
-    this._a = newValue;
   }
-
-  get b() {
-    return this._b;
-  }
-
-  set b(newValue) {
-    if (newValue < 0) {
-      throw new RangeError("Side cannot be less than 0");
-    }
-
-    this._b = newValue;
-  }
-
-  get angle() {
-    return this._angle;
-  }
-
-  set angle(newValue) {
-    if (newValue < 0) {
-      throw new RangeError("Angle cannot be less than 0");
-    }
-
-    this._angle = newValue;
-  }
-
-  getArea() {
-    return this.a * this.b * Math.sin(this.angle);
-  }
+  return table;
 }
 
-class Square extends Figure {
-  constructor(a) {
-    super(4);
-    this.a = a;
+multyTable(1);
+multyTable(3);
+
+const arr2 = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function binarySearch(array, whatToFind) {
+  //  need review!!!
+  if (whatToFind > array.length - 1) {
+    return -Infinity;
   }
 
-  get a() {
-    return this._a;
-  }
+  let start = 0;
+  let end = array.length - 1;
+  let middle = Math.round((start + end) / 2);
 
-  set a(newValue) {
-    if (newValue < 0) {
-      throw new RangeError("Side cannot be less than 0");
+  while (true) {
+    if (array[middle] === whatToFind) {
+      return middle;
     }
-
-    this._a = newValue;
+    if (array[middle] < whatToFind) {
+      start = middle;
+      middle = Math.ceil((start + end) / 2);
+    } else {
+      end = middle;
+      middle = Math.ceil((start + end) / 2);
+    }
   }
-
-  getArea() {
-    return this.a ** 2;
-  }
-}
-
-const square = new Square(4);
-
-function getFigureArea(figure) {
-  if (figure instanceof Figure) {
-    return figure.getArea();
-  }
-  throw new TypeError("Parameter is not a figure");
 }
