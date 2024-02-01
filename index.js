@@ -211,6 +211,46 @@ class Student extends Human {
 
     return this.averageGrade >= 90;
   }
+
+  static arrayMethod(array) {
+    if (array.length === 0) {
+      return 0;
+    }
+    /*
+    Var 1
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+      sum += array[i].averageGrade;
+    }
+    return sum / array.length;
+    */
+
+    /* var 2
+
+    let sum = 0;
+    array.forEach((student) => {
+      sum += student.averageGrade;
+    });
+    return sum / array.length;
+    */
+    const totalGrade = array.reduce(
+      (accumulator, student) => accumulator + student.averageGrade,
+      0
+    );
+    return totalGrade / array.length;
+  }
 }
 
-const student = new Student("John Madden", 18, "male", 2023, "id234", 90);
+const student1 = new Student(
+  "Сидоров Сидр Сидорович",
+  1999,
+  "male",
+  2021,
+  "A12-F-345",
+  95
+);
+const student2 = new Student("John Doe", 1999, "male", 2021, "A12-F-346", 85);
+const student3 = new Student("Jane Doe", 2000, "male", 2022, "A13-F-258", 70);
+const student4 = new Student("Josh Doe", 2000, "male", 2022, "A13-F-259", 77);
+
+const students = [student1, student2, student3, student4];
