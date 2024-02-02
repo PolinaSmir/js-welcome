@@ -17,28 +17,22 @@ const findMessage = new Map();
 findMessage.set(user1, user1.id);
 findMessage.set(user2, user2.id);
 
-class Queue {
-  constructor() {
-    this._head = 0;
-    this._tail = 0;
-  }
-  get size() {
-    return this._tail - this._head;
-  }
+const vocabulary = new Map();
 
-  enqueue(value) {
-    this[this._tail] = value;
-    this._tail++;
-    return this.size;
-  }
-  dequeue() {
-    if (this.size > 0) {
-      const firstItem = this[this._head];
-      delete this[this._head];
-      this._head++;
-      return firstItem;
+vocabulary.set("cat", "кошка");
+vocabulary.set("dog", "собака");
+vocabulary.set("eat", "есть");
+
+function translator(str, vocabulary) {
+  const arrayWords = str.trim().toLowerCase().split(" ");
+  const translatedArray = arrayWords.map((word) => {
+    if (vocabulary.has(word)) {
+      return vocabulary.get(word);
+    } else {
+      return word;
     }
-    return undefined;
-  }
+  });
+  return translatedArray.join(" ");
 }
-const queue = new Queue();
+
+console.log(translator("  Cat eat dog  ", vocabulary));
