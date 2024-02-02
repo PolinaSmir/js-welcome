@@ -12,27 +12,15 @@ const user2 = {
 const johnMessages = ["hello", "How are you?"];
 const alexMessages = ["hi!", "I`m fine"];
 
-const findMessage = new Map();
+const userId = new Map();
 
-findMessage.set(user1, user1.id);
-findMessage.set(user2, user2.id);
+userId.set(user1.id, johnMessages);
+userId.set(user2.id, alexMessages);
 
-const vocabulary = new Map();
-
-vocabulary.set("cat", "кошка");
-vocabulary.set("dog", "собака");
-vocabulary.set("eat", "есть");
-
-function translator(str, vocabulary) {
-  const arrayWords = str.trim().toLowerCase().split(" ");
-  const translatedArray = arrayWords.map((word) => {
-    if (vocabulary.has(word)) {
-      return vocabulary.get(word);
-    } else {
-      return word;
-    }
-  });
-  return translatedArray.join(" ");
+function findMessage(id, userId) {
+  if (userId.has(id)) {
+    return `Your messages are: ${userId.get(id)}`;
+  } else {
+    return "You don't have any messages";
+  }
 }
-
-console.log(translator("  Cat eat dog  ", vocabulary));
