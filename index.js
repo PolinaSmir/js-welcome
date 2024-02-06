@@ -1,26 +1,58 @@
-const user1 = {
-  firstName: "Alex",
-  lastName: "Doe",
-  id: 1,
-};
+/*
+const set = new Set([2, 3, 3, 5, 6, 77, 77, 5, 1, 1, 12, 12, 13]);
+console.log([...set.values()]);
 
-const user2 = {
-  firstName: "John",
-  lastName: "Doe",
-  id: 2,
-};
-const johnMessages = ["hello", "How are you?"];
-const alexMessages = ["hi!", "I`m fine"];
+const arrWithoutDoubles = [
+  ...new Set([2, 3, 3, 5, 6, 77, 77, 5, 1, 1, 12, 12, 13]),
+];
+*/
 
-const userId = new Map();
+const arr1 = [4, 3, 7, 5, -11];
+const arr2 = [3, 4, 8, 7, 2, -11];
 
-userId.set(user1.id, johnMessages);
-userId.set(user2.id, alexMessages);
+function twoArrayWithoutDoubles(arr1, arr2) {
+  return [...new Set([...arr1, ...arr2])];
+}
+const currentDate = new Date();
+function currentDateDisplay() {
+  const currentDate = new Date();
+  let day = currentDate.getDay();
+  const dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  // switch (currentDate.getDay()) {
+  //   case 0:
+  //     day = "Sunday";
+  //     break;
+  //   case 1:
+  //     day = "Monday";
+  //     break;
+  //   case 2:
+  //     day = "Tuesday";
+  //     break;
+  //   case 3:
+  //     day = "Wednesday";
+  //     break;
+  //   case 4:
+  //     day = "Thursday";
+  //     break;
+  //   case 5:
+  //     day = "Friday";
+  //     break;
+  //   case 6:
+  //     day = "Saturday";
+  //     break;
+  // }
 
-function findMessage(id, userId) {
-  if (userId.has(id)) {
-    return `Your messages are: ${userId.get(id)}`;
-  } else {
-    return "You don't have any messages";
-  }
+  //   console.log(`Today is : ${dayNames[day]}.
+  // Current time is: ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`);
+  return `Today is : ${
+    dayNames[day]
+  }. Current time is: ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
 }
